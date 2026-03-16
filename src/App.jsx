@@ -11,14 +11,25 @@ function App() {
     { title: 'Titanic', genre: 'Romantico' },
     { title: 'Batman', genre: 'Azione' },
     { title: 'Interstellar', genre: 'Fantascienza' },
-    { title: 'Pulp Fiction', genre: 'Thriller' },
-  ]
+    { title: 'Pulp Fiction', genre: 'Thriller' }
+  ];
+
+  const [movie, setMovie] = useState("");
 
   return (
     <>
-      <h1>MyMovieList<i className="bi bi-film"></i></h1>
+      <div className="container">
+        <h1>MyMovieList <i className="bi bi-film"></i></h1>
+        <div>
+          <ol className='list-unstyled'>
+            {movies.map(movie => (
+              <li>TITOLO: {movie.title} GENERE: {movie.genre}</li>
+            ))}
+          </ol>
+        </div>
+      </div>
     </>
   )
-}
+};
 
 export default App
