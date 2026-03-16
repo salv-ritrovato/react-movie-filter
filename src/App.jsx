@@ -4,7 +4,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 
 function App() {
-  // My array of movies
+  /* My array of movies */
   const movies = [
     { title: 'Inception', genre: 'Fantascienza' },
     { title: 'Il Padrino', genre: 'Thriller' },
@@ -28,9 +28,10 @@ function App() {
   return (
     <>
       <div className="container">
-        <h1 className='mt-3'>MyMovieList <i className="bi bi-film"></i></h1>
-
-        <select name="movies" value={genre} onChange={(e) => setGenre(e.target.value)}>
+        <h1 className='mt-3 mb-4'>MyMovieList <i className="bi bi-film"></i></h1>
+        <select name="movies" value={genre}
+          onChange={(e) => setGenre(e.target.value)}
+          className="form-select mt-2 mb-3">
           <option value="">Seleziona un genere...</option>
           <option value="Fantascienza">Fantascienza</option>
           <option value="Thriller">Thriller</option>
@@ -38,15 +39,22 @@ function App() {
           <option value="Azione">Azione</option>
         </select>
 
-        <div>
-          {/* Ordered list with dynamically printed movies */}
-          <ol className='list-unstyled mt-3'>
-            {/* Printing my array with map method */}
+        <table className="table table-striped mt-3">
+          <thead>
+            <tr>
+              <th>TITOLO</th>
+              <th>GENERE</th>
+            </tr>
+          </thead>
+          <tbody>
             {filteredMovies.map(movie => (
-              <li key={movie.title}>TITOLO: {movie.title} | GENERE: {movie.genre}</li>
+                <tr key={movie.title}>
+                <td>{movie.title}</td>
+                <td>{movie.genre}</td>
+              </tr>
             ))}
-          </ol>
-        </div>
+          </tbody>
+        </table>
       </div>
     </>
   )
