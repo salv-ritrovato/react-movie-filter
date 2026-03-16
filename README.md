@@ -11,7 +11,6 @@ L'array dei film è già fornito:
    { title: 'Pulp Fiction', genre: 'Thriller' },
  ]
 
-
 Dovrete utilizzare lo stato e useEffect per gestire il filtraggio dinamico.
 Per oggi diamo priorità alla logica e alla gestione dello stato. Una volta funzionante, possiamo pensare allo stile!
 
